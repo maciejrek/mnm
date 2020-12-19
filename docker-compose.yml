@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: 'rabbitmq:3.6-management-alpine'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  producer:
+    build:
+      context: .
+      dockerfile: DockerfileProducer
+    volumes:
+      - ./producer:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  multiplier:
+    build:
+      context: .
+      dockerfile: DockerfileMultiplier
+    volumes:
+      - ./worker:/app
+    environment:
+      - PYTHONUNBUFFERED=1
