@@ -46,7 +46,7 @@ def generate_data_samples():
     print(f"Data set:{res}")
 
 
-sleepTime = 10
+sleepTime = 15
 print(' [*] Sleeping for ', sleepTime, ' seconds.')
 time.sleep(sleepTime)
 generate_data_samples()

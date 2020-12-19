@@ -1,6 +1,6 @@
 FROM python:3
 RUN mkdir code
-ADD tasks/dev_4/multiplier.py requirements.txt /code/
+ADD tasks/dev_4/multiplier.py tasks/dev_4/db_handler.py requirements.txt /code/
 WORKDIR /code
 RUN pip install -r requirements.txt
 EXPOSE 80
